@@ -40,6 +40,12 @@ class BluPrint {
 		return $this;
 	}
 
+	/**
+	 * @param string $table_name - Table prefix will be added by the builder.
+	 * @param string|null $alias
+	 * 
+	 * @return $this
+	 */
 	public function from($table_name, $alias = null) {
 		if ( ! is_string( $table_name ) ) throw new \Exception('Not a valid query.');
 
