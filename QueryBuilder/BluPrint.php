@@ -40,12 +40,16 @@ class BluPrint {
 		return $this;
 	}
 
-	public function from($table_name) {
+	public function from($table_name, $alias = null) {
 		if ( ! is_string( $table_name ) ) throw new \Exception('Not a valid query.');
 
 		$table = static::$db->prefix . $table_name;
 		$query = static::$query_string;
-		static::$query_string = "{$query} FROM {$table}";
+		if ( $alias ) {
+			static::$query_string = "{$query} FROM {$table} as " . $alias;
+		} else {
+			static::$query_string = "{$query} FROM {$table}";
+		}
 
 		return $this;
 	}
