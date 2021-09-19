@@ -13,15 +13,15 @@
  */
 
 use WPQB\QueryBuilder\Add\Insert;
-use WPQB\QueryBuilder\Get\Select;
 use WPQB\QueryBuilder\Make\Create;
 use WPQB\QueryBuilder\Remove\Delete;
 use WPQB\QueryBuilder\Renovate\Update;
+// use WPQB\QueryBuilder\Statement\Select;
 use WPQB\QueryBuilder\WPQuery;
 
 require plugin_dir_path( __FILE__ ) . "vendor/autoload.php";
 
-
+// WPQuery::select(function(Select $db))
 // $query = WPQuery::select( function(Select $db) {
 // 	return $db->column("post_title", true)->from('posts')
 // 		->limit(4)
